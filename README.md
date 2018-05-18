@@ -1,3 +1,2 @@
-# hello-world
-Hello world new project template.
 # CreatorList
+由于creator本身没有提供list组件，我就基于creator封装了list组件，具体用法看demo就知道了，topTip和bottomTip是做下拉刷新用的，不过实现后并没有用于项目中，可能还有坑
