@@ -42,6 +42,7 @@ export default class MyList extends cc.Component {
     _startIndex: number;
     _endIndex: number;
     _cellOffset:cc.Vec2 = cc.v2(0, 0);
+    _cellWidth:number;
 
     onLoad() {
         this._content = this.scrollView.content;
@@ -125,6 +126,9 @@ export default class MyList extends cc.Component {
         for (var i = 0; i < this._count; ++i) {
             this._cellPositions[i] = currentPos;
             cellSize = this._handler("cellSize", this, i);
+            if(!this._cellWidth){
+                this._cellWidth = cellSize.width;
+            }
             if (this.direction == ListDirection.VERTICAL) {
                 currentPos += cellSize.height;
             } else {
@@ -146,6 +150,9 @@ export default class MyList extends cc.Component {
             size = cc.size(this._viewSize.width, Math.max(maxPosition, this._viewSize.height));
         } else {
             size = cc.size(Math.max(maxPosition, this._viewSize.width), this._viewSize.height);
+        }
+        if(size.width < this._cellWidth){
+            size.width = this._cellWidth
         }
         this.scrollView.content.setContentSize(size);
         if (!isNotResetOffset) {

@@ -452,7 +452,7 @@
     "content": {
       "__id__": 12
     },
-    "horizontal": false,
+    "horizontal": true,
     "vertical": true,
     "inertia": true,
     "brake": 0.75,
@@ -620,7 +620,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 437,
+      "width": 900,
       "height": 60
     },
     "_rotationX": 0,
